@@ -58,6 +58,25 @@ Add `ViewModel` and `LiveData` dependency on app level gradle file
 }
 ```
 </details>
+    
+### 3. Observe LiveData and update UI automatically
+- You can see in the below code we are observing the LiveData value change and updatiing the UI with the latest data.
+- we observe LiveData to avoid making unnecessary calls from an activity or fragment onResume() method and to ensure that view has some data to display as soon as it 
+ is created.
+    
+<details>
+  <summary><b>MainActivity.kt</b></summary>
+
+```kotlin
+   override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        mainViewModel.count.observe(this) {
+            setText(it)
+        }
+    }
+```
+</details>
 
 ### 1. Apply annotation and generate model
 
