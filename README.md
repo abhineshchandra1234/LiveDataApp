@@ -4,6 +4,8 @@
 <p align="center">
 This project explains about LiveData using a simple counter app. It follows all the best practices used for LiveData.
     </p>
+    
+---
 
 ## LiveData
 - LiveData is an observable data holder class. It is lifecycle aware.
@@ -12,9 +14,14 @@ This project explains about LiveData using a simple counter app. It follows all 
 
 ![LiveData](https://github.com/abhineshchandra1234/LiveDataApp/blob/master/images/LiveData.png)
 
+---
+
 ## App Screenshots
 
-![potrait](https://github.com/abhineshchandra1234/LiveDataApp/blob/master/images/potrait.png) ![landscape](https://github.com/abhineshchandra1234/LiveDataApp/blob/master/images/landscape.png)
+![potrait](https://github.com/abhineshchandra1234/LiveDataApp/blob/master/images/potrait.png) 
+![landscape](https://github.com/abhineshchandra1234/LiveDataApp/blob/master/images/landscape.png)
+
+---
 
 
 
