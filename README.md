@@ -37,6 +37,8 @@ Add `ViewModel` and `LiveData` dependency on app level gradle file
 ```
 </details>
 
+---
+
 ### 2. ViewModel and LiveData declaration
 - You can see in the code below we have create a ViewModel class. 
 - Inside this we have created countObject as MutableLiveData object with default value as 0. We have created another LiveData object count. 
@@ -59,6 +61,8 @@ Add `ViewModel` and `LiveData` dependency on app level gradle file
 ```
 </details>
     
+---
+    
 ### 3. Observe LiveData and update UI automatically
 - You can see in the below code we are observing the LiveData value change and updatiing the UI with the latest data.
 - we observe LiveData to avoid making unnecessary calls from an activity or fragment onResume() method and to ensure that view has some data to display as soon as it 
@@ -78,195 +82,13 @@ Add `ViewModel` and `LiveData` dependency on app level gradle file
 ```
 </details>
 
-### 1. Apply annotation and generate model
-
-Declare a state model as an `interface` and apply `@GenerateMutableModel` annotation to it.
-
-Example:
-
-```kotlin
-@GenerateMutableModel
-interface NotesState {
-    val isLoading: Boolean
-    val notes: List<String>
-    val error: String?
-}
-// You can also apply annotation `@Immutable` if using for Jetpack Compose UI model.
-```
-
-Once done, **🔨Build project** and mutable model will be generated for the immutable definition by KSP.
-
-### 2. Simply mutate and get immutable state
-
-The mutable model can be created with the factory function which is generated with the name of an interface with prefix
-`Mutable`.
-_For example, if interface name is `ExampleState` then method name for creating mutable model will be
-`MutableExampleState()` and will have parameters in it which are declared as public properties in the interface._
-
-```kotlin
-/**
- * Instance of mutable model [MutableNotesState] which is generated with Mutekt.
- */
-private val _state = MutableNotesState(isLoading = true, notes = emptyList(), error = null)
-
-fun setLoading() {
-    _state.isLoading = true
-}
-
-fun setNotes() {
-    _state.update {
-        isLoading = false
-        notes = listOf("Lorem Ipsum")
-    }
-}
-```
-
-> **Note**  
-> Use method `update{}` on Mutable model instance to mutate multiple fields atomically. 
-
-### 3. Getting reactive immutable value updates
-
-To get immutable instance with reactive state updates, use method `asStateFlow()` which returns instance of
-[`StateFlow<T>`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-state-flow/).
-Whenever any field of Mutable model is updated with new value, this StateFlow gets updated with new immutable state value.
-
-```kotlin
-val state: StateFlow<NotesState> = _state.asStateFlow()
-```
-
-#### Properties of immutable instance implemented by Mutekt:
-
-- [x] Immutable model implementation promises to be truly ***Immutable*** i.e. once instance is created, its properties
-will never change.
-- [x] Implementation is actually a ***data class*** under the hood i.e. having `equals()` and `hashCode()` 
-already overridden.
-
 ---
 
-## Setting up _Mutekt_ in the project
-
-### 1. Gradle setup
-
-#### 1.1 Enable KSP in module
-
-In order to support code generation at compile time, [enable KSP support in the module](https://kotlinlang.org/docs/ksp-quickstart.html#use-your-own-processor-in-a-project).
-
-```groovy
-plugins {
-    id 'com.google.devtools.ksp' version '1.7.10-1.0.6'
-}
-```
-
-#### 1.2 Add dependencies
-
-In `build.gradle` of app module, include this dependency
-
-```groovy
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    implementation("dev.shreyaspatil.mutekt:mutekt-core:$mutektVersion")
-    ksp("dev.shreyaspatil.mutekt:mutekt-codegen:$mutektVersion")
+> **Note**  
+> For complete code checkout the LiveData github repo
     
-    // Include kotlin coroutine to support usage of StateFlow 
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
-}
-```
-
-_You can find the latest version and changelogs in the [releases](https://github.com/PatilShreyas/mutekt/releases)_.
-
-#### 1.3 Include generated classes in sources
-
-In order to make IDE aware of generated code, it's important to include KSP generated sources in the project source sets.
-
-Include generated sources as follows:
-
-<details open>
-  <summary><b>Gradle (Groovy)</b></summary>
-
-```groovy
-kotlin {
-    sourceSets {
-        main.kotlin.srcDirs += 'build/generated/ksp/main/kotlin'
-        test.kotlin.srcDirs += 'build/generated/ksp/test/kotlin'
-    }
-}
-```
-
-</details>
-
-<details>
-  <summary><b>Gradle (KTS)</b></summary>
-
-```kotlin
-kotlin {
-    sourceSets.main {
-        kotlin.srcDir("build/generated/ksp/main/kotlin")
-    }
-    sourceSets.test {
-        kotlin.srcDir("build/generated/ksp/test/kotlin")
-    }
-}
-```
-
-</details>
-
-<details>
-  <summary><b>Android (Gradle - Groovy)</b></summary>
-
-```groovy
-android {
-    applicationVariants.all { variant ->
-        kotlin.sourceSets {
-            def name = variant.name
-            getByName(name) {
-                kotlin.srcDir("build/generated/ksp/$name/kotlin")
-            }
-        }
-    }
-}
-```
-</details>
-
-<details>
-  <summary><b>Android (Gradle - KTS)</b></summary>
-
-```kotlin
-android {
-    applicationVariants.all {
-        kotlin.sourceSets {
-            getByName(name) {
-                kotlin.srcDir("build/generated/ksp/$name/kotlin")
-            }
-        }
-    }
-}
-```
-</details>
-
-## See also
-
-- [Why Mutekt?](https://github.com/PatilShreyas/mutekt/wiki/Why-Mutekt%3F)
-- [Generated code with Mutekt](https://github.com/PatilShreyas/mutekt/wiki/Code-generation-with-Mutekt)
-
-## 👨‍💻 Development
-
-Clone this repository and import in IntelliJ IDEA (_any edition_) or Android Studio.
-
-### Module details
-
-- `mutekt-core`: Contain core annotation and interface for mutekt
-- `mutekt-codegen`: Includes sources for generating mutekt code with KSP
-- `example`: Example application which demonstrates usage of this library.
-
-### Verify build
-
-- To verify whether project building or not: `./gradlew build`.
-- To verify code formatting: `./gradlew spotlessCheck`.
-- To reformat code with Spotless: `./gradlew spotlessApply`.
-
+---
+    
 ## 📝 License
 
 ```
