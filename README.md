@@ -1,14 +1,6 @@
 <h1 align="center">LiveData</h1>
 
-<h3 align="center"><i>"Simplify mutating "immutable" state models"</i></h3>
-
-<p align="center">
-    <a href="https://github.com/PatilShreyas/mutekt/actions/workflows/build.yml"><img src="https://github.com/PatilShreyas/mutekt/actions/workflows/build.yml/badge.svg"/></a>
-    <a href="https://github.com/PatilShreyas/mutekt/actions/workflows/release.yml"><img src="https://github.com/PatilShreyas/mutekt/actions/workflows/release.yml/badge.svg"/></a>
-    <a href="https://search.maven.org/search?q=g:dev.shreyaspatil.mutekt"><img src="https://img.shields.io/maven-central/v/dev.shreyaspatil.mutekt/mutekt-codegen?label=Maven%20Central&logo=android&style=flat-square"/></a>
-    <a href="LICENSE"><img src="https://img.shields.io/github/license/PatilShreyas/mutekt?label=License)"/></a>
-    <a href="https://codecov.io/gh/PatilShreyas/mutekt"><img src="https://codecov.io/gh/PatilShreyas/mutekt/branch/main/graph/badge.svg?token=t5722h7jWn"/></a>
-</p>
+<h3 align="center"><i>"Observe live data changes and perform operations"</i></h3>
 
 Generates mutable models from immutable model definitions. It's based on Kotlin's Symbol Processor (KSP).
 This is inspired from the concept _Redux_ and _Immer_ from JS world that let you write simpler immutable update logic 
@@ -211,14 +203,6 @@ Clone this repository and import in IntelliJ IDEA (_any edition_) or Android Stu
 - To verify whether project building or not: `./gradlew build`.
 - To verify code formatting: `./gradlew spotlessCheck`.
 - To reformat code with Spotless: `./gradlew spotlessApply`.
-
-## 🙋‍♂️ Contribute 
-
-Read [contribution guidelines](CONTRIBUTING.md) for more information regarding contribution.
-
-## 💬 Discuss
-
-Have any questions, doubts or want to present your opinions, views? You're always welcome. You can [start discussions](https://github.com/PatilShreyas/mutekt/discussions).
 
 ## 📝 License
 
