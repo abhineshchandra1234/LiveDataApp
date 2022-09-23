@@ -8,8 +8,9 @@ This project explains about LiveData using a simple counter app. It follows all 
 ## LiveData
 - LiveData is an observable data holder class. It is lifecycle aware.
 - It only updates app component observers like activities, fragments, or services when they are in an active lifecycle state.
+- We could have implemented this project through only ViewModel. It would have handled the configuration change and will work the same but the major difference is that in ViewModel we need to update ui manually and it lags alot bcs to this and you can easily notice the difference in UX.
 
-Try out the [example app](/example) to see it in action.
+
 
 ### 1. Apply annotation and generate model
 
