@@ -28,4 +28,3 @@ Copyright © 2022 [Abhinesh Chandra](https://github.com/abhineshchandra1234).<br
 This project is [ Apache--2.0 license](https://github.com/abhineshchandra1234/LiveDataApp/blob/master/license) licensed.
 
 ***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
