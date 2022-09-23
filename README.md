@@ -23,8 +23,33 @@ This project explains about LiveData using a simple counter app. It follows all 
 
 ---
 
+### 1. Gradle Setup
+Add `ViewModel` and `LiveData` dependency on app level gradle file
+
+<details>
+  <summary><b>Android (Gradle - APP)</b></summary>
+
+```kotlin
+    //ViewModel
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+    //LiveData
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
+```
+</details>
+
+### 2. ViewModel and LiveData declaration
 
 
+<details>
+  <summary><b>MainViewModel.kt</b></summary>
+
+```kotlin
+    //ViewModel
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+    //LiveData
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
+```
+</details>
 
 ### 1. Apply annotation and generate model
 
