@@ -1,37 +1,31 @@
-<!-- ⚠️ This README has been generated from the file(s) "blueprint.md" ⚠️-->
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#viewmodel-in-kotlin)
+<h1 align="center">Welcome to Live Data in Kotlin 👋</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+  <a href="https://github.com/abhineshchandra1234/LiveDataApp/blob/master/license" target="_blank">
+    <img alt="License:  Apache--2.0 license" src="https://img.shields.io/badge/License- Apache--2.0 license-yellow.svg" />
+  </a>
+</p>
 
-# ➤ ViewModel in kotlin
+> This projects tells about LiveData in kotlin using simple counter app ex
 
-This project explains with a simple example of how to implement the view model in kotlin
+### 🏠 [Homepage](https://medium.com/@abhineshchandra1234/livedata-in-kotlin-ddfe84eff605)
 
-- ViewModel handles all the data for the UI
-- it is created when an activity is created. It survives configuration changes.
-- when using ViewModel and suppose configuration changes or you switch apps, old data will remain
-  saved in ViewModel
-- It is destroyed only when activity is destroyed or when you press the back button and the application
-  is closed and activity is destroyed.
-  
+## Author
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#lifecycle-of-a-viewmodel)
+👤 **Abhinesh Chandra**
 
-## ➤ lifecycle of a ViewModel
-![ViewModel lifecycle](https://github.com/abhineshchandra1234/ViewModelApp/blob/master/images/viewmodel-lifecycle.png)
+* Website: https://devlibrary.withgoogle.com/authors/abhineshchandra1234
+* Github: [@abhineshchandra1234](https://github.com/abhineshchandra1234)
+* LinkedIn: [@abhinesh-chandra-he-him-3b3157104](https://linkedin.com/in/abhinesh-chandra-he-him-3b3157104)
 
+## Show your support
 
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#app-screenshots)
+Give a ⭐️ if this project helped you!
 
-## ➤ App Screenshots
+## 📝 License
 
-![potrait](https://github.com/abhineshchandra1234/ViewModelApp/blob/master/images/potrait.png)
-![landscape](https://github.com/abhineshchandra1234/ViewModelApp/blob/master/images/landscape.png)
+Copyright © 2022 [Abhinesh Chandra](https://github.com/abhineshchandra1234).<br />
+This project is [ Apache--2.0 license](https://github.com/abhineshchandra1234/LiveDataApp/blob/master/license) licensed.
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#references)
-
-## ➤ References
-
-- [https://youtu.be/j5ZouactAvk](https://youtu.be/j5ZouactAvk)
-- [https://developer.android.com/topic/libraries/architecture/viewmodel](https://developer.android.com/topic/libraries/architecture/viewmodel)
-- [https://youtu.be/OZBwLFV-OvI](https://youtu.be/OZBwLFV-OvI)
-
+***
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
