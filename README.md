@@ -38,16 +38,24 @@ Add `ViewModel` and `LiveData` dependency on app level gradle file
 </details>
 
 ### 2. ViewModel and LiveData declaration
-
+- You can see in the code below we have create a ViewModel class. 
+- Inside this we have created countObject as MutableLiveData object with default value as 0. We have created another LiveData object count. 
+- MutableLiveData is generally used inside the ViewModel and updated inside it only as you can see with increment method.
+- ViewModel exposes Immutable LiveData object here count to fetch MutableLiveData countObject value. It also restrict observers from changing the LiveData value.
 
 <details>
   <summary><b>MainViewModel.kt</b></summary>
 
 ```kotlin
-    //ViewModel
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
-    //LiveData
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
+   class MainViewModel : ViewModel() {
+    private val countObject = MutableLiveData<Int>(0)
+
+    val count : LiveData<Int> get() = countObject
+
+    fun increment() {
+        countObject.value = countObject.value?.plus(1)
+    }
+}
 ```
 </details>
 
