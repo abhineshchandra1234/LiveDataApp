@@ -12,6 +12,11 @@ This project explains about LiveData using a simple counter app. It follows all 
 
 ![LiveData](https://github.com/abhineshchandra1234/LiveDataApp/blob/master/images/LiveData.png)
 
+## App Screenshots
+
+![potrait](https://github.com/abhineshchandra1234/LiveDataApp/blob/master/images/potrait.png) ![landscape](https://github.com/abhineshchandra1234/LiveDataApp/blob/master/images/landscape.png)
+
+
 
 
 ### 1. Apply annotation and generate model
