@@ -88,7 +88,13 @@ Add `ViewModel` and `LiveData` dependency on app level gradle file
 > For complete code checkout the LiveData github repo
     
 ---
-    
+
+### References
+- [https://youtu.be/UGBHHkUyL5c](https://youtu.be/UGBHHkUyL5c)
+- [https://developer.android.com/topic/libraries/architecture/livedata](https://developer.android.com/topic/libraries/architecture/livedata)
+
+---
+
 ## 📝 License
 
 ```
