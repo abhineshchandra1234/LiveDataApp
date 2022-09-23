@@ -1,17 +1,13 @@
 <h1 align="center">LiveData</h1>
 
 <h3 align="center"><i>"Observe live data changes and perform operations"</i></h3>
+<p align="center">
+This project explains about LiveData using a simple counter app. It follows all the best practices used for LiveData.
+    </p>
 
-Generates mutable models from immutable model definitions. It's based on Kotlin's Symbol Processor (KSP).
-This is inspired from the concept _Redux_ and _Immer_ from JS world that let you write simpler immutable update logic 
-using "mutating" syntax which helps simplify most reducer implementations. 
-**So you just need to focus on actual development and _Mutekt_ will write boilerplate for you!** 😎
-
-<p align="center">Like this ⬇️️</p>
-
-![Mutekt Usage Example](mutekt-usage.gif)
-
-## Usage
+## LiveData
+- LiveData is an observable data holder class. It is lifecycle aware.
+- It only updates app component observers like activities, fragments, or services when they are in an active lifecycle state.
 
 Try out the [example app](/example) to see it in action.
 
