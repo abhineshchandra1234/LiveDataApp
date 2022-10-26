@@ -81,11 +81,6 @@ Add `ViewModel` and `LiveData` dependency on app level gradle file
     }
 ```
 </details>
-
----
-
-> **Note**  
-> For complete code checkout the LiveData github repo
     
 ---
    
